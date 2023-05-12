@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Modal isOpen title='Hello there' actionLabel='Submit' onClose={() => {}} onSubmit={() => {}} />
+        <Modal isOpen title='Hello there' actionLabel='Submit'  />
         <Navbar />
         {children}
       </body>
