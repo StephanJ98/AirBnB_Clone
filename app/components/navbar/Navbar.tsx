@@ -1,11 +1,12 @@
 'use client'
 
 import React from "react"
+import { SafeUser } from "@/app/types"
 import Container from '../Container'
 import Logo from './Logo'
 import Search from './Search'
 import UserMenu from './UserMenu'
-import { SafeUser } from "@/app/types"
+import Categories from "./Categories"
 
 
 type Props = {
@@ -23,6 +24,7 @@ export default function Navbar({ currentUser }: Props) {
             <UserMenu currentUser={currentUser} />
           </div>
         </Container>
+        <Categories />
       </div>
     </div>
   )
