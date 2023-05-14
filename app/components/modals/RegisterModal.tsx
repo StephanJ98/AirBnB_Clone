@@ -3,6 +3,7 @@
 import React, { useCallback, useState } from 'react'
 import axios from 'axios'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import useLoginModal from '@/app/hooks/useLoginModal'
 import useRegisterModal from '@/app/hooks/useRegisterModal'
 import { AiFillGithub } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
@@ -16,6 +17,7 @@ import { signIn } from 'next-auth/react'
 type Props = {}
 
 export default function RegisterModal({ }: Props) {
+    const loginModal = useLoginModal()
     const registerModal = useRegisterModal()
     const [isLoading, setIsLoading] = useState(false)
     const { register, handleSubmit, formState: { errors } } = useForm<FieldValues>({
@@ -39,6 +41,11 @@ export default function RegisterModal({ }: Props) {
                 setIsLoading(false)
             })
     }
+
+    const toggle = useCallback(() => {
+        registerModal.onClose()
+        loginModal.onOpen()
+    }, [loginModal, registerModal])
 
     const bodyContent = (
         <div className='flex flex-col gap-4'>
@@ -79,7 +86,7 @@ export default function RegisterModal({ }: Props) {
             <div className='text-neutral-500 text-center mt-4 font-light'>
                 <div className='justify-center flex flex-row items-center gap-2'>
                     <div>Already have an account?</div>
-                    <div className='text-neutral-800 cursor-pointer hover:underline' onClick={registerModal.onClose}>Log in</div>
+                    <div className='text-neutral-800 cursor-pointer hover:underline' onClick={toggle}>Log in</div>
                 </div>
             </div>
         </div>

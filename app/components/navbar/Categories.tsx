@@ -18,12 +18,12 @@ type Props = {}
 export const categories = [
     {
         label: 'Beach',
-        icon: GiWindmill,
+        icon: TbBeach,
         description: 'This property is close to the beach!'
     },
     {
         label: 'Windmills',
-        icon: TbBeach,
+        icon: GiWindmill,
         description: 'This property has windmills!'
     },
     {
