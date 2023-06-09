@@ -23,5 +23,5 @@ export type SafeReservation = Omit<
     createdAt: string
     startDate: string
     endDate: string
-    Listing: SafeListing
+    listing: SafeListing
 }

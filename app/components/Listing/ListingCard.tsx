@@ -1,8 +1,7 @@
 'use client'
 
 import useCountries from '@/app/hooks/useCountries'
-import { SafeListing, SafeUser } from '@/app/types'
-import { Reservation } from '@prisma/client'
+import { SafeListing, SafeReservation, SafeUser } from '@/app/types'
 import { useRouter } from 'next/navigation'
 import { format } from 'date-fns'
 import React, { useCallback, useMemo } from 'react'
@@ -12,7 +11,7 @@ import Button from '../Button'
 
 type Props = {
     data: SafeListing
-    reservation?: Reservation
+    reservation?: SafeReservation
     onAction?: (id: string) => void
     actionLabel?: string
     actionId?: string
