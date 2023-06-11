@@ -1,12 +1,16 @@
 import getCurrentUser from "./actions/getCurrectUser";
-import getListings from "./actions/getListings";
+import getListings, { Props as ListingProps } from "./actions/getListings";
 import ClientOnly from "./components/ClientOnly";
 import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
 import ListingCard from "./components/Listing/ListingCard";
 
-export default async function Home() {
-  const listings = await getListings()
+type Props = {
+  searchParams: ListingProps
+}
+
+export default async function Home({ searchParams }: Props) {
+  const listings = await getListings(searchParams)
   const currentUser = await getCurrentUser()
 
   if (listings.length === 0) {
