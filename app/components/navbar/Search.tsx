@@ -42,7 +42,7 @@ export default function Search({ }: Props) {
         if (guestCount) return `${guestCount} Guests`
 
         return 'Add Guests'
-    }, [getByValue, locationValue])
+    }, [guestCount])
 
     return (
         <div

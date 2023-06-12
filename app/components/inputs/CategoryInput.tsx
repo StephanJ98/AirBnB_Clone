@@ -10,7 +10,7 @@ type Props = {
     selected?: boolean
 }
 
-export default function ({ label, icon: Icon, selected, onClick }: Props) {
+export default function CategoryBox ({ label, icon: Icon, selected, onClick }: Props) {
     return (
         <div
             onClick={() => onClick(label)}
