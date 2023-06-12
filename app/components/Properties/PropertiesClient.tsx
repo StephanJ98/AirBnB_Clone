@@ -47,7 +47,7 @@ export default function PropertiesClient({ listings, currentUser }: Props) {
                         actionId={listing.id}
                         onAction={onCancel}
                         disabled={deletingId === listing.id}
-                        actionLabel='Delete propertie'
+                        actionLabel='Delete property'
                         currentUser={currentUser}
                     />
                 ))}
